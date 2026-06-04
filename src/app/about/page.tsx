@@ -2,13 +2,13 @@
 
 import React from "react";
 import Link from "next/link";
-import { 
-  Linkedin, 
-  Mail, 
-  ArrowLeft, 
-  CheckCircle2, 
-  Briefcase, 
-  GraduationCap, 
+import {
+  Linkedin,
+  Mail,
+  ArrowLeft,
+  CheckCircle2,
+  Briefcase,
+  GraduationCap,
   Award,
   Sparkles
 } from "lucide-react";
@@ -34,31 +34,31 @@ export default function About() {
     {
       role: "Personal Branding & LinkedIn Growth Strategist",
       company: "Blowlin",
-      period: "Present",
+      period: "2026",
       description: "Coordinating CEO thought leadership campaigns, securing 100K+ reach metrics and Hindustan Times features."
     },
     {
       role: "Digital Marketing Head",
-      company: "Fast Scaling Streetwear Brand",
-      period: "2024",
+      company: "Six Four Six",
+      period: "2025",
       description: "Directed growth metrics, organic copy hooks, and multi-channel acquisition pipelines."
     },
     {
       role: "Social Media Manager",
       company: "Dotin Academy",
-      period: "2023 - 2024",
+      period: "2025",
       description: "Scaled corporate reach parameters and structured content blueprints."
     },
     {
       role: "Social Media & Content Strategist",
       company: "EduSlive",
-      period: "2022 - 2023",
+      period: "2024",
       description: "Drafted organic acquisition copy and handled digital strategy channels."
     },
     {
       role: "Content Creator",
       company: "Rail Rolls",
-      period: "2022",
+      period: "2024",
       description: "Created story hooks for franchise outreach campaigns."
     },
     {
@@ -67,12 +67,6 @@ export default function About() {
       period: "2021 - 2022",
       description: "Crafted short-form video scripts and corporate content blueprints."
     },
-    {
-      role: "Copywriter & Social Media Marketer",
-      company: "Dus Media",
-      period: "2021",
-      description: "Authored sales copy templates and managed client channels."
-    }
   ];
 
   return (
@@ -112,7 +106,7 @@ export default function About() {
       <Header />
 
       <main className="pt-32 pb-24 px-6 sm:px-8 max-w-7xl mx-auto space-y-24">
-        
+
 
         {/* ================= SECTION 1: WHO AM I ================= */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -124,7 +118,7 @@ export default function About() {
               </div>
               <h1 className="text-xl font-bold text-white font-heading">Sarath Kumar</h1>
               <p className="text-xs text-gold uppercase tracking-wider font-bold mt-1">Founder Brand Strategist</p>
-              
+
               <div className="absolute bottom-4 left-4 right-4 text-[9px] text-zinc-600 font-bold uppercase tracking-wider border-t border-white/5 pt-2">
                 About Image Placeholder
               </div>
@@ -144,10 +138,13 @@ export default function About() {
 
             <div className="space-y-4 text-xs sm:text-sm text-zinc-300 font-medium leading-relaxed">
               <p>
-                I specialise in helping high-value founders, startup CEOs, investors, and industry leaders build authority, trust, and commercial leverage.
+                I work at the intersection of founder positioning, B2B distribution, and executive storytelling. Over the past two years, I've written content for tech CEOs, VCs, and operations leaders across India, the GCC, Germany, and the UK.
               </p>
               <p>
-                By turning raw operator expertise into strategic thought leadership, positioning systems, and founder-led content, I help clients attract inbound opportunities, strengthen industry authority, improve hiring outcomes, and build long-term brand equity.
+                My approach is straightforward: I take a founder's real material, their operator metrics, hard-won lessons, and views on where their industry is going, and turn it into LinkedIn posts, essays, and decks that carry actual insight. No fluff, no generic quotes.
+              </p>
+              <p>
+                The goal is to position founders as the authority people think of first in their category. That positioning qualifies outbound deals, attracts talent, and brings in inbound leads.
               </p>
             </div>
 
@@ -181,8 +178,8 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {skills.map((skill, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="bg-card border border-white/5 p-6 rounded-xl hover:border-gold/25 transition-all duration-300 flex flex-col justify-between glow-card"
               >
                 <div className="space-y-3">
@@ -209,7 +206,7 @@ export default function About() {
               <div key={idx} className="relative">
                 {/* timeline dot */}
                 <div className="absolute left-[-35px] top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#0A0A0A] border border-gold/40 text-gold text-xs font-bold" />
-                
+
                 <div className="space-y-1">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                     <h4 className="text-sm font-bold text-white font-heading">{exp.role}</h4>
