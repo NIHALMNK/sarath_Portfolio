@@ -24,7 +24,7 @@ export const foundersData: Founder[] = [
     industry: "ERP",
     country: "India",
     engagementType: "Founder Positioning",
-    image: "/founders/muhsin.jpg",
+    image: "/founders/Muhsin.jpeg",
     linkedinUrl: "https://linkedin.com/in/muhsin-enfono",
     results: {
       impressions: "30K+",
@@ -43,10 +43,10 @@ export const foundersData: Founder[] = [
     image: "/founders/sehl-ayub.jpg",
     linkedinUrl: "https://linkedin.com/in/sehl-ayub",
     results: {
-      impressions: "40K+",
-      followers: "300+",
-      leads: "Inbound Enquiries",
-      hires: "Hiring Leads"
+      impressions: "70K+",
+      followers: "500+",
+      // leads: "Inbound Enquiries",
+      hires: "5+"
     }
   },
   {

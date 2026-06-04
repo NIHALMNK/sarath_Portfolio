@@ -42,7 +42,7 @@ export default function ThankYou() {
               If your goals align with the type of engagements I work on, I will reach out for a private strategy conversation.
             </p>
             <p className="text-[11px] text-gold/85 italic font-medium">
-              Please check your inbox for confirmation.
+              Please check your inbox (and spam folder) for a confirmation email.
             </p>
           </div>
 

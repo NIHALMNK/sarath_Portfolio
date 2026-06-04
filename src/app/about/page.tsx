@@ -112,15 +112,15 @@ export default function About() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 relative group">
             <div className="absolute inset-0 bg-gradient-to-tr from-gold/15 to-transparent rounded-2xl pointer-events-none" />
-            <div className="bg-surface border border-white/5 rounded-2xl p-8 flex flex-col items-center justify-center text-center aspect-[4/5] relative overflow-hidden glow-card-gold">
-              <div className="h-28 w-28 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center text-gold text-2xl font-bold font-heading mb-4">
-                SK
-              </div>
-              <h1 className="text-xl font-bold text-white font-heading">Sarath Kumar</h1>
-              <p className="text-xs text-gold uppercase tracking-wider font-bold mt-1">Founder Brand Strategist</p>
-
-              <div className="absolute bottom-4 left-4 right-4 text-[9px] text-zinc-600 font-bold uppercase tracking-wider border-t border-white/5 pt-2">
-                About Image Placeholder
+            <div className="bg-surface border border-white/5 rounded-2xl aspect-[4/5] relative overflow-hidden glow-card-gold">
+              <img
+                src="/profile/sarath.png"
+                alt="Sarath Kumar Portrait"
+                className="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+              />
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent p-6 text-center">
+                <h1 className="text-xl font-bold text-white font-heading">Sarath Kumar</h1>
+                <p className="text-xs text-gold uppercase tracking-wider font-bold mt-1">Founder Brand Strategist</p>
               </div>
             </div>
           </div>

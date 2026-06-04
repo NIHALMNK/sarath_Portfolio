@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, CheckCircle, ShieldAlert, AlertCircle } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle } from "lucide-react";
 import { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ResultMetrics from "@/components/shared/ResultMetrics";
 import ApplyCTA from "@/components/shared/ApplyCTA";
+import SafeImage from "@/components/shared/SafeImage";
+import ResultMetrics from "@/components/shared/ResultMetrics";
 import { getCaseStudyBySlug } from "@/data/caseStudies";
 
 interface CaseStudyPageProps {
@@ -18,7 +19,7 @@ interface CaseStudyPageProps {
 export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const cs = getCaseStudyBySlug(resolvedParams.slug);
-  
+
   if (!cs) {
     return {
       title: "Case Study Not Found | Sarath Kumar",
@@ -50,6 +51,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     notFound();
   }
 
+  const profileName = cs.linkedinProfile.name;
+  const profileTitle = cs.linkedinProfile.title;
+  const profileCompany = cs.linkedinProfile.company;
+  const profileLocation = cs.linkedinProfile.location;
+  const profileFollowers = cs.linkedinProfile.followers;
+  const profileBio = cs.linkedinProfile.bio;
+
   return (
     <div className="relative min-h-screen bg-[#0A0A0A] text-white overflow-hidden">
       {/* Schema Article Markup */}
@@ -65,7 +73,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             "author": {
               "@type": "Person",
               "name": "Sarath Kumar",
-              "url": "https://sarathkumar.com"
+              "url": "https://www.linkedin.com/in/sarathkumarp/"
             },
             "publisher": {
               "@type": "Organization",
@@ -97,7 +105,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </Link>
         </div>
 
-        {/* Title Block */}
+        {/* 1. HERO HEADER */}
         <section className="space-y-4">
           <div className="flex flex-wrap gap-2">
             <span className="text-[10px] text-gold uppercase tracking-wider font-bold bg-gold/5 px-3 py-1 border border-gold/10 rounded-full">
@@ -110,47 +118,149 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               {cs.engagementType}
             </span>
           </div>
-
-          <h1 className="text-3xl sm:text-5xl font-extrabold font-heading leading-tight tracking-tight mt-2 text-white">
-            {cs.title}
-          </h1>
-          <p className="text-sm sm:text-lg text-zinc-400 font-medium max-w-3xl leading-relaxed">
-            {cs.subtitle}
-          </p>
         </section>
 
-        {/* Outcome Metrics Dashboard */}
+        {/* 2. CLIENT PROFILE SNAPSHOT */}
+        <section className="space-y-4">
+          {/* <h3 className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Client Profile Snapshot</h3> */}
+          <div className="bg-surface border border-white/5 rounded-2xl overflow-hidden shadow-2xl relative">
+            {/* Banner Image */}
+            <div className="relative h-32 sm:h-44 w-full bg-gradient-to-r from-zinc-900 via-gold/10 to-zinc-900 overflow-hidden">
+              {cs.linkedinProfile.coverImage && (
+                <SafeImage
+                  src={cs.linkedinProfile.coverImage.replace(/^\/?public\/?/, '/')}
+                  alt={`${cs.linkedinProfile.name} LinkedIn Cover`}
+                  className="w-full h-full object-cover opacity-60 absolute inset-0"
+                  hideOnError={true}
+                />
+              )}
+            </div>
+
+            {/* Content Container */}
+            <div className="px-6 pb-6 relative">
+              {/* Profile Image Overlap */}
+              <div className="relative -mt-16 sm:-mt-20 mb-4 h-24 w-24 sm:h-32 sm:w-32 rounded-full overflow-hidden border-4 border-[#0A0A0A] bg-[#1A1A1A] shrink-0">
+                {cs.linkedinProfile.profileImage ? (
+                  <SafeImage
+                    src={cs.linkedinProfile.profileImage.replace(/^\/?public\/?/, '/')}
+                    alt={`${cs.linkedinProfile.name} Profile`}
+                    className="w-full h-full object-cover"
+                    fallbackSrc={`https://api.dicebear.com/7.x/initials/svg?seed=${cs.linkedinProfile.name}&backgroundColor=d4af37&textColor=000000`}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gold/20 text-gold text-2xl font-bold font-heading">
+                    {cs.linkedinProfile.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                )}
+              </div>
+
+              {/* Details */}
+              <div className="space-y-4">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                  <div className="space-y-1.5">
+                    <h4 className="text-xl sm:text-2xl font-extrabold text-white font-heading tracking-tight flex items-center gap-2">
+                      <span>{profileName}</span>
+                      <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" title="Active Authority Node" />
+                    </h4>
+                    <p className="text-xs sm:text-sm text-zinc-300 font-semibold">
+                      {profileTitle} at <span className="text-gold">{profileCompany}</span>
+                    </p>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-zinc-500 font-bold uppercase tracking-wider">
+                      <span>{profileLocation}</span>
+                      <span>•</span>
+                      <span className="text-gold">{profileFollowers} Followers</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <a
+                      href={cs.linkedinProfile.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 border border-gold/30 hover:border-gold bg-gold/5 hover:bg-gold/10 text-gold font-bold text-xs rounded-lg transition-all duration-300 uppercase tracking-wider cursor-pointer shadow-md"
+                    >
+                      <span>View LinkedIn Profile</span>
+                      <ArrowUpRight className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="h-[1px] bg-white/5" />
+
+                {/* About Section */}
+                <div className="space-y-2">
+                  <h5 className="text-[10px] text-zinc-500 font-extrabold uppercase tracking-wider">About / Bio Summary</h5>
+                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium italic">
+                    &ldquo;{profileBio}&rdquo;
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. BUSINESS IMPACT */}
         <section className="bg-surface border border-white/5 rounded-2xl p-6 sm:p-8 glow-card-gold space-y-4">
-          <h3 className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Campaign Performance Outcomes</h3>
+          <h3 className="text-xs uppercase tracking-widest text-gold font-bold flex items-center gap-2">
+            <CheckCircle className="h-4 w-4 text-gold shrink-0" />
+            <span>Business Impact</span>
+          </h3>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {cs.businessImpact.map((impact, idx) => (
+              <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-300 font-medium leading-relaxed">
+                <span className="text-gold font-bold shrink-0 mt-0.5">✓</span>
+                <span>{impact}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* 4. METRICS SNAPSHOT */}
+        <section className="space-y-4">
+          <h3 className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Metrics Snapshot</h3>
           <ResultMetrics results={cs.results} variant="large" />
         </section>
 
-        {/* Editorial Body: Problem, Strategy, Execution */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
+        {/* 5. PROJECT OBJECTIVE */}
+        <section className="bg-card border border-white/5 p-6 sm:p-8 rounded-2xl glow-card-gold space-y-3">
+          <h4 className="text-xs uppercase tracking-widest text-gold font-bold flex items-center gap-2">
+            <span className="h-1.5 w-1.5 bg-gold rounded-full" />
+            <span>Project Objective</span>
+          </h4>
+          <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed font-medium leading-loose">
+            {cs.objective}
+          </p>
+        </section>
+
+        {/* 6. PROBLEM / 7. STRATEGY / 8. EXECUTION */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
+          {/* Problem */}
           <div className="bg-card border border-white/5 p-6 sm:p-8 rounded-xl space-y-3 glow-card">
             <h4 className="text-xs uppercase tracking-widest text-gold font-bold flex items-center gap-2">
               <span className="h-1.5 w-1.5 bg-gold rounded-full" />
-              <span>The Problem</span>
+              <span>Problem</span>
             </h4>
             <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
               {cs.problem}
             </p>
           </div>
 
+          {/* Strategy */}
           <div className="bg-card border border-white/5 p-6 sm:p-8 rounded-xl space-y-3 glow-card">
             <h4 className="text-xs uppercase tracking-widest text-gold font-bold flex items-center gap-2">
               <span className="h-1.5 w-1.5 bg-gold rounded-full" />
-              <span>The Strategy</span>
+              <span>Strategy</span>
             </h4>
             <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
               {cs.strategy}
             </p>
           </div>
 
+          {/* Execution */}
           <div className="bg-card border border-white/5 p-6 sm:p-8 rounded-xl space-y-3 glow-card">
             <h4 className="text-xs uppercase tracking-widest text-gold font-bold flex items-center gap-2">
               <span className="h-1.5 w-1.5 bg-gold rounded-full" />
-              <span>The Execution</span>
+              <span>Execution</span>
             </h4>
             <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
               {cs.execution}
@@ -158,95 +268,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         </section>
 
-        {/* Campaign Ownership Split: Contributions & Responsibilities */}
-        {(cs.contributions || cs.responsibilities) && (
-          <section className="bg-surface border border-white/5 rounded-2xl p-6 sm:p-8 glow-card-gold space-y-6">
-            <div className="space-y-1">
-              <span className="text-[10px] text-gold uppercase tracking-widest font-extrabold">Campaign Ownership Split</span>
-              <h3 className="text-lg sm:text-xl font-bold font-heading text-white">Roles & Contributions</h3>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/5 pt-6">
-              {/* Contributions */}
-              {cs.contributions && (
-                <div className="space-y-4">
-                  <h4 className="text-xs uppercase tracking-widest text-zinc-400 font-bold flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 bg-zinc-400 rounded-full" />
-                    <span>Your Contributions</span>
-                  </h4>
-                  <ul className="space-y-2.5">
-                    {cs.contributions.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-xs text-zinc-300 font-medium">
-                        <span className="text-zinc-500 font-bold shrink-0 mt-0.5">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Responsibilities */}
-              {cs.responsibilities && (
-                <div className="space-y-4">
-                  <h4 className="text-xs uppercase tracking-widest text-gold font-bold flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 bg-gold rounded-full" />
-                    <span>My Responsibilities</span>
-                  </h4>
-                  <ul className="space-y-2.5">
-                    {cs.responsibilities.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-xs text-zinc-300 font-medium">
-                        <span className="text-gold font-bold shrink-0 mt-0.5">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </section>
-        )}
-
-        {/* SEO CONTENT BLOCK */}
-        {cs.seoContentBlock && (
-          <section className="border-t border-white/5 pt-12 space-y-8 max-w-4xl mx-auto">
-            <div className="space-y-1">
-              <span className="text-[10px] text-gold uppercase tracking-widest font-extrabold">Deep Dive Breakdown</span>
-              <h3 className="text-xl sm:text-2xl font-bold font-heading">Operational Insights & Analysis</h3>
-            </div>
-
-            <div className="space-y-6 text-xs sm:text-sm text-zinc-400 font-medium leading-relaxed">
-              <div className="space-y-2">
-                <h4 className="font-bold text-white uppercase tracking-wider text-xs">Category Challenges</h4>
-                <p>{cs.seoContentBlock.challenges}</p>
-              </div>
-
-              <div className="space-y-2">
-                <h4 className="font-bold text-white uppercase tracking-wider text-xs">Methodological Approach</h4>
-                <p>{cs.seoContentBlock.approach}</p>
-              </div>
-
-              <div className="space-y-2">
-                <h4 className="font-bold text-white uppercase tracking-wider text-xs">Measurable Campaign Results</h4>
-                <p>{cs.seoContentBlock.results}</p>
-              </div>
-
-              <div className="space-y-2">
-                <h4 className="font-bold text-white uppercase tracking-wider text-xs">Strategic Lessons Learned</h4>
-                <p>{cs.seoContentBlock.lessons}</p>
-              </div>
-
-              <div className="space-y-2">
-                <h4 className="font-bold text-white uppercase tracking-wider text-xs">B2B Industry Insights</h4>
-                <p>{cs.seoContentBlock.insights}</p>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Apply CTA Section */}
+        {/* 12. CTA */}
         <section className="pt-12">
-          <ApplyCTA 
-            title="Want Similar Authority Outcomes For Your Brand?" 
+          <ApplyCTA
+            title="Want Similar Authority Outcomes For Your Brand?"
             subtitle="Let's align your positioning narrative to drive B2B pipeline, hires, and industry respect."
           />
         </section>

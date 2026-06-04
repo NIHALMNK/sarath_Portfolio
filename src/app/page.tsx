@@ -185,14 +185,15 @@ export default function Home() {
             {/* Visual Portrait Strategy Placeholder */}
             <div className="lg:col-span-4 relative group">
               <div className="absolute inset-0 bg-gradient-to-tr from-gold/15 to-transparent rounded-xl pointer-events-none" />
-              <div className="bg-surface border border-white/5 rounded-xl aspect-[4/5] flex flex-col items-center justify-center text-center p-6 relative overflow-hidden">
-                <div className="h-20 w-20 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center text-gold text-lg font-bold font-heading mb-4">
-                  SK
-                </div>
-                <h4 className="text-sm font-bold text-white font-heading">Sarath Kumar</h4>
-                <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Profile Hero Image</p>
-                <div className="absolute bottom-3 text-[8px] text-zinc-600 font-bold uppercase tracking-wider">
-                  Strategic Portrait Placeholder
+              <div className="bg-surface border border-white/5 rounded-xl aspect-[4/5] relative overflow-hidden">
+                <img
+                  src="/profile/sarath.png"
+                  alt="Sarath Kumar Portrait"
+                  className="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                />
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent p-4 text-center">
+                  <h4 className="text-sm font-bold text-white font-heading">Sarath Kumar</h4>
+                  <p className="text-[9px] text-gold uppercase tracking-widest font-extrabold">Founder Brand Strategist</p>
                 </div>
               </div>
             </div>
@@ -513,10 +514,10 @@ export default function Home() {
             <div className="text-center space-y-3 mb-16">
               <span className="text-xs uppercase tracking-widest text-gold font-bold">Featured Case Study</span>
               <h2 className="text-3xl sm:text-4xl font-bold font-heading">
-                Operationalizing Authority: Muhsin
+                Operationalizing Authority: {featuredCaseStudy.title}
               </h2>
               <p className="text-zinc-500 text-xs font-bold uppercase">
-                B2B ERP Repositioning & LinkedIn Campaign Results
+                {featuredCaseStudy.subtitle}
               </p>
             </div>
 
@@ -525,16 +526,16 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pb-6 border-b border-white/5">
                   <div>
                     <span className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Client</span>
-                    <h4 className="text-sm font-bold text-white mt-1">Muhsin</h4>
-                    <p className="text-xs text-gold font-medium">CEO, MD@Enfono Technologies</p>
+                    <h4 className="text-sm font-bold text-white mt-1">{featuredCaseStudy.title}</h4>
+                    <p className="text-xs text-gold font-medium">{featuredCaseStudy.subtitle}</p>
                   </div>
                   <div>
                     <span className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Industry</span>
-                    <h4 className="text-sm font-bold text-white mt-1">Enterprise ERP</h4>
+                    <h4 className="text-sm font-bold text-white mt-1">ERP</h4>
                   </div>
                   <div>
                     <span className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold">Engagement</span>
-                    <h4 className="text-sm font-bold text-white mt-1">Positioning & Copy Strategy</h4>
+                    <h4 className="text-sm font-bold text-white mt-1">{featuredCaseStudy.engagementType}</h4>
                   </div>
                 </div>
 

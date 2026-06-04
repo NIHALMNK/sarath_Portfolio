@@ -16,7 +16,7 @@ export const testimonialsData: Testimonial[] = [
     name: "Muhsin",
     designation: "CEO & Founder",
     company: "Enfono Technologies",
-    image: "/founders/muhsin.jpg",
+    image: "/founders/Muhsin.jpeg",
     testimonial: "Sarath completely transformed how I think about corporate communication. His positioning framework helped Enfono shift from competing on tight product price grids to establishing pure category authority. The content generated actual enterprise pipeline leads and attracted top engineering talent organically.",
     linkedinUrl: "https://linkedin.com/in/muhsin-enfono",
     category: "recommendations",
