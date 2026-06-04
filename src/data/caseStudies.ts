@@ -63,8 +63,8 @@ export const caseStudiesData: CaseStudy[] = [
       "Increased founder credibility among enterprise decision-makers"
     ],
     linkedinProfile: {
-      profileImage: "/founders/Muhsin.jpeg",
-      coverImage: "/founders/cover-Muhsin.jpeg",
+      profileImage: "/founders/muhsin.jpeg",
+      coverImage: "/founders/cover_muhsin.jpeg",
       name: "Muhsin MT",
       title: "CEO & MD",
       company: "Enfono Technologies",
@@ -103,7 +103,7 @@ export const caseStudiesData: CaseStudy[] = [
     ],
     linkedinProfile: {
       profileImage: "/founders/sehl.jpeg",
-      coverImage: "/founders/cover-sehl.jpeg",
+      coverImage: "/founders/cover_sehl.jpeg",
       name: "Sehl Ayub",
       title: "CEO",
       company: "BetterGrow Holding",
@@ -143,7 +143,7 @@ export const caseStudiesData: CaseStudy[] = [
     ],
     linkedinProfile: {
       profileImage: "/founders/murshid.jpeg",
-      coverImage: "/founders/cover-murshid.jpeg",
+      coverImage: "/founders/cover_murshid.jpeg",
       name: "Murshid Rahman",
       title: "Founder",
       company: "Lanstitut",
@@ -182,8 +182,8 @@ export const caseStudiesData: CaseStudy[] = [
       "Expanded network reach by 10,000 new followers and impressions above 600K"
     ],
     linkedinProfile: {
-      profileImage: "/founders/Shamil.jpeg",
-      coverImage: "/founders/cover-Shamil.jpeg",
+      profileImage: "/founders/shamil.jpeg",
+      coverImage: "/founders/cover_shamil.jpeg",
       name: "Shamil Muhammed",
       title: "Founder",
       company: "Blowlin",
@@ -220,8 +220,8 @@ export const caseStudiesData: CaseStudy[] = [
       "Established him as a trustable partner and authoritative voice in aeromedics"
     ],
     linkedinProfile: {
-      profileImage: "/founders/Afsal.jpeg",
-      coverImage: "/founders/cover-Afsal.jpeg",
+      profileImage: "/founders/afsal.jpeg",
+      coverImage: "/founders/cover_afsal.jpeg",
       name: "Dr. Afsal Mohammed",
       title: "Founding Partner & MD",
       company: "Bluedot Air Ambulance",
@@ -258,8 +258,8 @@ export const caseStudiesData: CaseStudy[] = [
       "Established him as a recognized industry expert"
     ],
     linkedinProfile: {
-      profileImage: "/founders/Jabir.jpeg",
-      coverImage: "/founders/cover-Jabir.jpeg",
+      profileImage: "/founders/jabir.jpeg",
+      coverImage: "/founders/cover_jabir.jpeg",
       name: "Jabir M Liyakath Ali",
       title: "Founder & CEO",
       company: "WebCastle",
@@ -296,8 +296,8 @@ export const caseStudiesData: CaseStudy[] = [
       "Established him as a recognized industry expert"
     ],
     linkedinProfile: {
-      profileImage: "/founders/Yasin.jpeg",
-      coverImage: "/founders/cover-Yasin.jpeg",
+      profileImage: "/founders/yasin.jpeg",
+      coverImage: "/founders/cover_yasin.jpeg",
       name: "Yasin Bin Saleem",
       title: "Founder",
       company: "Lanstitut",
@@ -334,8 +334,8 @@ export const caseStudiesData: CaseStudy[] = [
       "Educated audiences about Indian food and the problems travelers face"
     ],
     linkedinProfile: {
-      profileImage: "/founders/RailRolls.jpeg",
-      coverImage: "/founders/cover-RailRolls.jpeg",
+      profileImage: "/founders/railrolls.jpeg",
+      coverImage: "/founders/cover_railrolls.jpeg",
       name: "RailRolls",
       title: "Company Page",
       company: "RailRolls",
