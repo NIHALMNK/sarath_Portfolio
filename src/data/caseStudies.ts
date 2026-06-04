@@ -312,7 +312,7 @@ export const caseStudiesData: CaseStudy[] = [
   },
   //--------railrolls--------
   {
-    slug: "railrolls-blowlin",
+    slug: "railrolls",
     status: "published",
     title: "RailRolls",
     subtitle: "Company Page Visibility & Brand Building",

@@ -150,7 +150,7 @@ export default function About() {
 
             <div className="flex gap-4 pt-2">
               <a
-                href="https://linkedin.com/in/sarath-kumar"
+                href="https://www.linkedin.com/in/sarathkumarp/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-xs text-gold font-bold uppercase tracking-widest hover:text-white transition-colors duration-300"
