@@ -626,7 +626,8 @@ export default function Home() {
                   "Coordinating monthly interview loops to extract developer/operator insights.",
                   "Co-authoring and ghostwriting all premium LinkedIn assets.",
                   "Creating clean custom graphics concept guides.",
-                  "Managing PR opportunities (Hindustan Times, YourStory)."
+                  "Managing PR opportunities (Hindustan Times, YourStory).",
+                  "Build Content Call Prep before content call"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-xs text-zinc-300 font-medium leading-relaxed">
                     <Check className="h-4 w-4 text-gold shrink-0 mt-0.5" />
@@ -648,7 +649,8 @@ export default function Home() {
                   "Sharing actual business lessons, metrics, and operator worldview details.",
                   "Reviewing drafted copy assets for accuracy and technical tone.",
                   "Commitment to brand scaling as a long-term compounding asset.",
-                  "Active cooperation on business targets (franchise, sales, hiring)."
+                  "Active cooperation on business targets (franchise, sales, hiring).",
+                  "Please share images related to the content."
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-xs text-zinc-300 font-medium leading-relaxed">
                     <Check className="h-4 w-4 text-gold shrink-0 mt-0.5" />

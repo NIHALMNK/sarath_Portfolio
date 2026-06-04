@@ -43,7 +43,7 @@ export const caseStudiesData: CaseStudy[] = [
     results: {
       impressions: "35K+",
       followers: "1.5K+",
-      leads: "$100k Inbound Lead",
+      leads: "$100k+ Lead",
       hires: "4 Key Hires"
     },
     problem: "Enfono Technologies offers complex enterprise ERP systems. The founder had massive industry expertise but was virtually invisible on digital channels. The firm was competing on price grids, and outbound sales cycles were sluggish. They lacked a structured mechanism to attract enterprise buyers and top-tier engineering talent organically.",
