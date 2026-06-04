@@ -6,7 +6,10 @@ export const siteConfig = {
   url: "https://sarathkumar.com",
   email: "contact@sarathkumar.com",
   linkedin: "https://linkedin.com/in/sarath-kumar",
-  
+  linkedinUrl: "https://linkedin.com/in/sarath-kumar",
+  whatsappUrl: "https://wa.me/919744936762",
+  contactEmail: "content.sarath@gmail.com",
+
   // Future Calendly/Cal.com link
   bookingUrl: "https://calendly.com/sarath-kumar",
 

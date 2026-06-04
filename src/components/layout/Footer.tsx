@@ -14,47 +14,10 @@ export default function Footer() {
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gold/3 rounded-full blur-[120px] pointer-events-none -z-10" />
 
       <div className="max-w-[1200px] mx-auto space-y-16">
-        
-        {/* SECTION 1: Top CTA Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-12">
-          {/* Left Side */}
-          <div className="lg:col-span-7 space-y-3">
-            <span className="text-[10px] text-gold font-extrabold uppercase tracking-widest block">
-              READY TO BUILD YOUR AUTHORITY?
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
-              Let&apos;s Build Something<br className="hidden sm:inline" /> Worth Talking About.
-            </h2>
-          </div>
 
-          {/* Right Side */}
-          <div className="lg:col-span-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-8">
-            <p className="text-xs sm:text-sm text-zinc-400 font-medium leading-relaxed max-w-sm">
-              Helping founders become recognized voices in their industry through positioning, thought leadership, and strategic personal branding.
-            </p>
-
-            {/* Circular CTA Button */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="shrink-0"
-            >
-              <Link
-                href="/contact"
-                className="relative flex items-center justify-center w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gold text-zinc-950 font-extrabold uppercase tracking-widest text-[9px] sm:text-[10px] text-center px-4 transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-[0_0_40px_rgba(212,175,55,0.35)] hover:bg-white hover:text-black cursor-pointer leading-tight"
-              >
-                <span>APPLY NOW</span>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* First Divider */}
-        <div className="h-[1px] bg-white/5" />
-
-        {/* SECTION 2: Main Footer Grid */}
+        {/*Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 py-4">
-          
+
           {/* COLUMN 1: Brand */}
           <div className="lg:col-span-3 space-y-4">
             <Link
@@ -111,7 +74,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <a
-                  href={siteConfig.linkedin}
+                  href={siteConfig.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-zinc-400 hover:text-white transition-colors duration-300 font-semibold flex items-center gap-1 cursor-pointer"
@@ -122,7 +85,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={`mailto:${siteConfig.email}`}
+                  href={`mailto:${siteConfig.contactEmail}`}
                   className="text-xs text-zinc-400 hover:text-white transition-colors duration-300 font-semibold flex items-center gap-1 cursor-pointer"
                 >
                   <span>Email</span>
@@ -131,7 +94,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/910000000000"
+                  href={siteConfig.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-zinc-400 hover:text-white transition-colors duration-300 font-semibold flex items-center gap-1 cursor-pointer"
@@ -183,10 +146,10 @@ export default function Footer() {
               EMAIL
             </span>
             <a
-              href={`mailto:${siteConfig.email}`}
+              href={`mailto:${siteConfig.contactEmail}`}
               className="text-xs text-zinc-400 hover:text-white transition-colors duration-300 font-semibold cursor-pointer"
             >
-              {siteConfig.email}
+              {siteConfig.contactEmail}
             </a>
           </div>
 
@@ -196,7 +159,7 @@ export default function Footer() {
               LINKEDIN
             </span>
             <a
-              href={siteConfig.linkedin}
+              href={siteConfig.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-zinc-400 hover:text-white transition-colors duration-300 font-semibold cursor-pointer truncate block max-w-xs"

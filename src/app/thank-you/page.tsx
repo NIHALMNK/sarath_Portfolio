@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CheckCircle2, ChevronRight, Linkedin, Mail } from "lucide-react";
 import confetti from "canvas-confetti";
 import Header from "@/components/layout/Header";
+import { siteConfig } from "@/config/site";
 
 export default function ThankYou() {
   useEffect(() => {
@@ -32,11 +33,16 @@ export default function ThankYou() {
             <CheckCircle2 className="h-8 w-8" />
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-4">
             <span className="text-[10px] text-gold uppercase tracking-widest font-extrabold">Application Received</span>
-            <h1 className="text-2xl sm:text-3xl font-bold font-heading text-white">Your Request Has Been Queued</h1>
-            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mt-2 font-medium">
-              Thank you for applying. Sarath reviews each intake personally. If there is mutual alignment, we will contact you via LinkedIn or email within 48 business hours.
+            <h1 className="text-2xl sm:text-3xl font-bold font-heading text-white">Application Received.</h1>
+            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-medium">
+              Thank you for reaching out.<br />
+              Your application has been successfully submitted and will be personally reviewed.<br />
+              If your goals align with the type of engagements I work on, I will reach out for a private strategy conversation.
+            </p>
+            <p className="text-[11px] text-gold/85 italic font-medium">
+              Please check your inbox for confirmation.
             </p>
           </div>
 
@@ -44,7 +50,7 @@ export default function ThankYou() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <a
-              href="https://linkedin.com/in/sarath-kumar"
+              href={siteConfig.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-5 py-3 bg-white text-black hover:bg-gold hover:text-black font-semibold text-xs rounded-lg transition-all duration-300 border border-transparent uppercase tracking-wider cursor-pointer"
@@ -53,11 +59,10 @@ export default function ThankYou() {
               <span>Connect on LinkedIn</span>
             </a>
             <Link
-              href="/case-studies"
+              href="/"
               className="flex items-center justify-center gap-1.5 px-5 py-3 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs rounded-lg transition-all duration-300 border border-white/10 uppercase tracking-wider cursor-pointer"
             >
-              <span>View Case Studies</span>
-              <ChevronRight className="h-4 w-4 shrink-0" />
+              <span>Back To Home</span>
             </Link>
           </div>
 

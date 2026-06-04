@@ -47,10 +47,10 @@ export default function Contact() {
   const [values, setValues] = useState({
     name: "",
     email: "",
+    phone: "",
     linkedin: "",
-    role: "",
-    companySize: "",
-    challenge: ""
+    challenge: "",
+    honeypot: ""
   });
 
   const [loading, setLoading] = useState(false);
@@ -62,17 +62,41 @@ export default function Contact() {
     setValues((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSelectCompanySize = (size: string) => {
-    setValues((prev) => ({ ...prev, companySize: size }));
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
     // Validate
-    if (!values.name || !values.email || !values.linkedin || !values.role || !values.companySize || !values.challenge) {
-      setError("Please complete all required fields and lead qualifiers.");
+    // Validate
+    if (!values.name || !values.email || !values.phone || !values.linkedin || !values.challenge) {
+      setError("Please complete all required fields.");
+      return;
+    }
+
+    // Phone digits count verification (min 8, max 15)
+    const cleanedPhone = values.phone.replace(/\D/g, "");
+    if (cleanedPhone.length < 8 || cleanedPhone.length > 15) {
+      setError("Phone number must contain between 8 and 15 digits.");
+      return;
+    }
+
+    // Accept standard international symbols and digits
+    const phoneRegex = /^\+?[0-9\s\-()]{8,20}$/;
+    if (!phoneRegex.test(values.phone)) {
+      setError("Please enter a valid phone number format.");
+      return;
+    }
+
+    // Email address formatting verification
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(values.email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    // LinkedIn Profile URL format check
+    if (!values.linkedin.toLowerCase().includes("linkedin.com/")) {
+      setError("Please enter a valid LinkedIn profile URL (must contain linkedin.com).");
       return;
     }
 
@@ -98,13 +122,6 @@ export default function Contact() {
       setError("A networking error occurred. Please verify your connection and try again.");
     }
   };
-
-  const companySizes = [
-    { label: "1-10", value: "1-10" },
-    { label: "11-50", value: "11-50" },
-    { label: "51-200", value: "51-200" },
-    { label: "200+", value: "200-plus" }
-  ];
 
   return (
     <div className="relative min-h-screen bg-[#0A0A0A] text-white overflow-hidden">
@@ -200,6 +217,23 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Phone Number */}
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="phone" className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
+                    Phone Number <span className="text-gold">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    value={values.phone}
+                    onChange={handleChange}
+                    placeholder="e.g. +91 9744936762"
+                    className="bg-card border border-white/5 rounded-lg px-4 py-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/30 transition-all duration-300 font-medium"
+                  />
+                </div>
+
                 {/* LinkedIn Profile URL */}
                 <div className="flex flex-col gap-2">
                   <label htmlFor="linkedin" className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
@@ -216,53 +250,18 @@ export default function Contact() {
                     className="bg-card border border-white/5 rounded-lg px-4 py-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/30 transition-all duration-300 font-medium"
                   />
                 </div>
-
-                {/* Lead Scoring: Current Role */}
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="role" className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
-                    Current Role <span className="text-gold">*</span>
-                  </label>
-                  <select
-                    id="role"
-                    name="role"
-                    required
-                    value={values.role}
-                    onChange={handleChange}
-                    className="bg-card border border-white/5 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/30 transition-all duration-300 font-medium cursor-pointer"
-                  >
-                    <option value="" disabled className="text-zinc-700">Select your position...</option>
-                    <option value="founder">Founder</option>
-                    <option value="ceo">CEO / Executive</option>
-                    <option value="marketing-head">Marketing Head</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
               </div>
 
-              {/* Lead Scoring: Company Size */}
-              <div className="flex flex-col gap-3">
-                <label className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
-                  Company Size <span className="text-gold">*</span>
-                </label>
-                <div className="grid grid-cols-4 gap-2.5">
-                  {companySizes.map((size) => {
-                    const isSelected = values.companySize === size.value;
-                    return (
-                      <button
-                        key={size.value}
-                        type="button"
-                        onClick={() => handleSelectCompanySize(size.value)}
-                        className={`px-3 py-3 rounded-lg text-xs font-semibold tracking-wide border transition-all duration-300 text-center uppercase cursor-pointer ${
-                          isSelected
-                            ? "bg-gold/15 border-gold text-gold shadow-md"
-                            : "bg-card border-white/5 hover:bg-white/[0.02] text-zinc-400 hover:text-zinc-200"
-                        }`}
-                      >
-                        {size.label}
-                      </button>
-                    );
-                  })}
-                </div>
+              {/* Invisible Honeypot Spam Prevention Trap */}
+              <div className="hidden" aria-hidden="true">
+                <input
+                  type="text"
+                  name="honeypot"
+                  value={values.honeypot}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
               </div>
 
               {/* Positioning Challenge */}
@@ -307,7 +306,7 @@ export default function Contact() {
             {/* Secondary Actions */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
-                href="https://wa.me/910000000000"
+                href={siteConfig.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs rounded-lg transition-all duration-300 border border-white/10 uppercase tracking-wider cursor-pointer shadow-md"
@@ -316,7 +315,7 @@ export default function Contact() {
                 <span>Message on WhatsApp</span>
               </a>
               <a
-                href={siteConfig.linkedin}
+                href={siteConfig.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs rounded-lg transition-all duration-300 border border-white/10 uppercase tracking-wider cursor-pointer shadow-md"
