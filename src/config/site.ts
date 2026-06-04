@@ -3,10 +3,10 @@ export const siteConfig = {
   role: "Founder Brand Strategist & Thought Leadership Consultant",
   title: "Sarath Kumar | Founder Brand Strategist & LinkedIn Thought Leadership Consultant",
   description: "I specialise in helping high-value founders, startup CEOs, investors, and industry leaders build authority, trust, and commercial leverage. By turning raw operator expertise into strategic thought leadership, positioning systems, and founder-led content, I help clients attract inbound opportunities, strengthen industry authority, improve hiring outcomes, and build long-term brand equity.",
-  url: "https://sarathkumar.com",
+  url: "https://www.linkedin.com/in/sarathkumarp/",
   email: "contact@sarathkumar.com",
-  linkedin: "https://linkedin.com/in/sarath-kumar",
-  linkedinUrl: "https://linkedin.com/in/sarath-kumar",
+  linkedin: "https://www.linkedin.com/in/sarathkumarp/",
+  linkedinUrl: "https://www.linkedin.com/in/sarathkumarp/",
   whatsappUrl: "https://wa.me/919744936762",
   contactEmail: "content.sarath@gmail.com",
 
