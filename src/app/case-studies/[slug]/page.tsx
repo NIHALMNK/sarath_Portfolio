@@ -6,8 +6,9 @@ import { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ApplyCTA from "@/components/shared/ApplyCTA";
-import SafeImage from "@/components/shared/SafeImage";
 import ResultMetrics from "@/components/shared/ResultMetrics";
+import FounderAvatar from "@/components/shared/FounderAvatar";
+import FounderCover from "@/components/shared/FounderCover";
 import { getCaseStudyBySlug } from "@/data/caseStudies";
 
 interface CaseStudyPageProps {
@@ -126,33 +127,20 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="bg-surface border border-white/5 rounded-2xl overflow-hidden shadow-2xl relative">
             {/* Banner Image */}
             <div className="relative h-32 sm:h-44 w-full bg-gradient-to-r from-zinc-900 via-gold/10 to-zinc-900 overflow-hidden">
-              {cs.linkedinProfile.coverImage && (
-                <SafeImage
-                  src={cs.linkedinProfile.coverImage.replace(/^\/?public\/?/, '/')}
-                  alt={`${cs.linkedinProfile.name} LinkedIn Cover`}
-                  className="w-full h-full object-cover opacity-60 absolute inset-0"
-                  hideOnError={true}
-                />
-              )}
+              <FounderCover 
+                src={cs.linkedinProfile.coverImage}
+                name={cs.linkedinProfile.name}
+              />
             </div>
 
             {/* Content Container */}
             <div className="px-6 pb-6 relative">
               {/* Profile Image Overlap */}
-              <div className="relative -mt-16 sm:-mt-20 mb-4 h-24 w-24 sm:h-32 sm:w-32 rounded-full overflow-hidden border-4 border-[#0A0A0A] bg-[#1A1A1A] shrink-0">
-                {cs.linkedinProfile.profileImage ? (
-                  <SafeImage
-                    src={cs.linkedinProfile.profileImage.replace(/^\/?public\/?/, '/')}
-                    alt={`${cs.linkedinProfile.name} Profile`}
-                    className="w-full h-full object-cover"
-                    fallbackSrc={`https://api.dicebear.com/7.x/initials/svg?seed=${cs.linkedinProfile.name}&backgroundColor=d4af37&textColor=000000`}
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gold/20 text-gold text-2xl font-bold font-heading">
-                    {cs.linkedinProfile.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                )}
-              </div>
+              <FounderAvatar 
+                src={cs.linkedinProfile.profileImage}
+                name={cs.linkedinProfile.name}
+                className="relative -mt-16 sm:-mt-20 mb-4 h-24 w-24 sm:h-32 sm:w-32 border-4 border-[#0A0A0A] bg-[#1A1A1A] shrink-0 z-10"
+              />
 
               {/* Details */}
               <div className="space-y-4">

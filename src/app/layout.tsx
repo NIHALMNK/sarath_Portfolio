@@ -61,6 +61,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} ${playfair.variable} dark`}
       style={{ colorScheme: "dark" }}
+      data-scroll-behavior="smooth"
     >
       <body className="bg-background text-foreground font-sans min-h-screen flex flex-col antialiased">
         {children}

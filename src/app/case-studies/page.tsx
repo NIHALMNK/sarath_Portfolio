@@ -7,6 +7,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ResultMetrics from "@/components/shared/ResultMetrics";
+import FounderAvatar from "@/components/shared/FounderAvatar";
 import { getCaseStudies } from "@/data/caseStudies";
 
 export default function CaseStudies() {
@@ -97,22 +98,11 @@ export default function CaseStudies() {
 
                   {/* Founder Profile Details Row */}
                   <div className="flex items-center gap-4">
-                    <div className="relative h-14 w-14 sm:h-16 sm:w-16 rounded-full overflow-hidden border border-white/10 bg-zinc-900 shrink-0">
-                      {cs.linkedinProfile.profileImage ? (
-                        <img
-                          src={cs.linkedinProfile.profileImage.replace(/^\/?public\/?/, '/')}
-                          alt={`${cs.linkedinProfile.name} Profile`}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            e.currentTarget.src = `https://api.dicebear.com/7.x/initials/svg?seed=${cs.linkedinProfile.name}&backgroundColor=d4af37&textColor=000000`;
-                          }}
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-gold/20 text-gold text-lg font-bold">
-                          {cs.linkedinProfile.name.split(' ').map(n => n[0]).join('')}
-                        </div>
-                      )}
-                    </div>
+                    <FounderAvatar 
+                      src={cs.linkedinProfile.profileImage}
+                      name={cs.linkedinProfile.name}
+                      size={64}
+                    />
 
                     {/* Name & Title */}
                     <div className="space-y-1">

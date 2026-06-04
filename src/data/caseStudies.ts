@@ -48,7 +48,7 @@ export const caseStudiesData: CaseStudy[] = [
     founderIds: ["muhsin"],
     results: {
       impressions: "35K+",
-      followers: "1.5K+",
+      followers: "1500+",
       leads: "$100K+ Pipeline",
       hires: "4 Key Hires"
     },
@@ -89,7 +89,7 @@ export const caseStudiesData: CaseStudy[] = [
     founderIds: ["sehl-ayub"],
     results: {
       impressions: "70K+",
-      followers: "500+ Active",
+      followers: "1500+ Active",
       // leads: "Retail Inbounds",
       hires: "5+"
     },
@@ -108,7 +108,7 @@ export const caseStudiesData: CaseStudy[] = [
       title: "CEO",
       company: "BetterGrow Holding",
       location: "Dubai, UAE",
-      followers: "5,000+",
+      followers: "1500+",
       bio: "CEO of BetterGrow Holding. Strategic investor and business operator scaling regional F&B and retail brands across the GCC.",
       linkedinUrl: " https://www.linkedin.com/in/sehlayub/"
     },
@@ -128,7 +128,7 @@ export const caseStudiesData: CaseStudy[] = [
     founderIds: ["murshid-rahman"],
     results: {
       impressions: "50K+",
-      followers: "2k+",
+      followers: "2500+",
       hires: "5 Executive Hires",
       mediaFeatures: "YourStory Feature"
     },
@@ -148,7 +148,7 @@ export const caseStudiesData: CaseStudy[] = [
       title: "Founder",
       company: "Lanstitut",
       location: "Cochin, Kerala, India",
-      followers: "12,000+",
+      followers: "2500+",
       bio: "Founder of Lanstitut. Helping students and healthcare professionals build international careers through relocation and language systems.",
       linkedinUrl: "https://www.linkedin.com/in/murshidrahman/"
     },
@@ -168,7 +168,7 @@ export const caseStudiesData: CaseStudy[] = [
     founderIds: ["shamil-muhammed"],
     results: {
       impressions: "200K+",
-      followers: "5k+",
+      followers: "10,000+",
       leads: "7+ Qualified Deals",
       mediaFeatures: "Hindustan Times"
     },
@@ -208,7 +208,7 @@ export const caseStudiesData: CaseStudy[] = [
     founderIds: ["dr-afsal-mohammed"],
     results: {
       impressions: "30K+",
-      followers: "1.5K+"
+      followers: "1500+"
     },
     problem: "A doctor and aeromedical leader, he wanted to build an impactful and trustworthy brand on LinkedIn but had no system to translate his clinical and operational expertise into a credible public presence.",
     strategy: "Strategized his content to position him as an industry expert, identified his unique angle, and aligned it tightly with his personal brand to build authority in the aeromedical space.",
@@ -226,7 +226,7 @@ export const caseStudiesData: CaseStudy[] = [
       title: "Founding Partner & MD",
       company: "Bluedot Air Ambulance",
       location: "India",
-      followers: "1,500+",
+      followers: "1500+",
       bio: "Founding Partner & MD at Bluedot Air Ambulance. Building trusted, expert-led aeromedical care and sharing the realities of air ambulance operations.",
       linkedinUrl: "https://www.linkedin.com/in/dr-afsal-flyingdoc/"
     },
@@ -246,7 +246,7 @@ export const caseStudiesData: CaseStudy[] = [
     founderIds: ["jabir-m-liyakath-ali"],
     results: {
       impressions: "50K+",
-      followers: "200+"
+      followers: "10000+"
     },
     problem: "A founder and CEO who needed lead generation, talent acquisition, and trustworthy brand credibility, while building thought leadership and positioning himself as an expert in his niche.",
     strategy: "Strategized content around four factors: trust, lead generation, thought leadership, and expertise drawn from his personal and professional experience.",
@@ -264,7 +264,7 @@ export const caseStudiesData: CaseStudy[] = [
       title: "Founder & CEO",
       company: "WebCastle",
       location: "India",
-      followers: "200+",
+      followers: "10000+",
       bio: "Founder & CEO at WebCastle. Building software and web products, and sharing lessons from years of running a services business.",
       linkedinUrl: "https://www.linkedin.com/in/jabirml/"
     },
@@ -284,7 +284,7 @@ export const caseStudiesData: CaseStudy[] = [
     founderIds: ["yasin-bin-saleem"],
     results: {
       impressions: "50K+",
-      followers: "2.5K+"
+      followers: "3500+"
     },
     problem: "A founder who needed talent acquisition and trustworthy brand credibility, wanting to build thought leadership, position himself as an expert in his niche, and share his expertise in minimal, simple language.",
     strategy: "Strategized content around three factors: trust, thought leadership, and expertise drawn from his personal and professional experience, paired with industry-relevant topics.",
@@ -302,7 +302,7 @@ export const caseStudiesData: CaseStudy[] = [
       title: "Founder",
       company: "Lanstitut",
       location: "India",
-      followers: "2,500+",
+      followers: "3500+",
       bio: "Founder at Lanstitut. Sharing expertise on building and operating in ed-tech and healthcare, in plain and simple words.",
       linkedinUrl: "https://www.linkedin.com/in/yasin-bin-saleem/"
     },
@@ -322,7 +322,7 @@ export const caseStudiesData: CaseStudy[] = [
     founderIds: ["railrolls"],
     results: {
       impressions: "25K+ in 2 weeks",
-      followers: "500+"
+      followers: "1000+"
     },
     problem: "A consumer brand that needed talent acquisition and trustworthy brand credibility, and wanted to position itself as a problem-solving public brand in India.",
     strategy: "Strategized company-page content around three factors: trust, a credible brand base, and problem-solving — anchored in the brand's USP and supported by audience insights from their database.",
@@ -340,7 +340,7 @@ export const caseStudiesData: CaseStudy[] = [
       title: "Company Page",
       company: "RailRolls",
       location: "India",
-      followers: "500+",
+      followers: "1000+",
       bio: "RailRolls — solving real problems around Indian food and travel, and building a credible, value-driven consumer brand.",
       linkedinUrl: "https://www.linkedin.com/company/railrolls/"
     },

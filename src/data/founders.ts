@@ -24,7 +24,7 @@ export const foundersData: Founder[] = [
     industry: "ERP",
     country: "India",
     engagementType: "Founder Positioning",
-    image: "/founders/Muhsin.jpeg",
+    image: "/founders/muhsin.jpeg",
     linkedinUrl: "https://linkedin.com/in/muhsin-enfono",
     results: {
       impressions: "30K+",
@@ -40,7 +40,7 @@ export const foundersData: Founder[] = [
     industry: "F&B",
     country: "GCC",
     engagementType: "Personal Branding",
-    image: "/founders/sehl-ayub.jpg",
+    image: "/founders/sehl.jpeg",
     linkedinUrl: "https://linkedin.com/in/sehl-ayub",
     results: {
       impressions: "70K+",
@@ -56,7 +56,7 @@ export const foundersData: Founder[] = [
     industry: "EdTech",
     country: "India",
     engagementType: "Thought Leadership",
-    image: "/founders/murshid-rahman.jpg",
+    image: "/founders/murshid.jpeg",
     linkedinUrl: "https://linkedin.com/in/murshid-lanstitut",
     results: {
       impressions: "50K+",
@@ -72,7 +72,7 @@ export const foundersData: Founder[] = [
     industry: "Healthcare",
     country: "GCC",
     engagementType: "Thought Leadership Strategy",
-    image: "/founders/yasin-bin-salim.jpg",
+    image: "/founders/yasin.jpeg",
     linkedinUrl: "https://linkedin.com/in/yasin-lanstitut",
     results: {
       impressions: "50K+",
@@ -88,7 +88,7 @@ export const foundersData: Founder[] = [
     industry: "F&B",
     country: "India",
     engagementType: "Personal Branding & Growth",
-    image: "/founders/shamil-muhammed.jpg",
+    image: "/founders/shamil.jpeg",
     linkedinUrl: "https://linkedin.com/in/shamil-blowlin",
     results: {
       impressions: "100K+",
@@ -104,7 +104,7 @@ export const foundersData: Founder[] = [
     industry: "F&B",
     country: "India",
     engagementType: "Brand Strategy",
-    image: "/founders/rail-rolls.jpg",
+    image: "/founders/railrolls.jpeg",
     results: {
       impressions: "25K+",
       followers: "300",
